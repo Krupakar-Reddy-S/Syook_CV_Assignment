@@ -57,8 +57,13 @@ def convert_voc_to_yolo(voc_folder, yolo_folder):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert PascalVOC annotations to YOLOv8 format")
-    parser.add_argument("voc_folder", type=str, help="Path to the folder containing PascalVOC XML annotations and classes.txt")
-    parser.add_argument("yolo_folder", type=str, help="Path to the folder to save YOLOv8 annotations")
+    parser.add_argument("voc_folder", type=str, help="Path to the folder containing PascalVOC XML annotations and classes.txt", default=r'datasets\voc_original', nargs='?')
+    parser.add_argument("yolo_folder", type=str, help="Path to the folder to save YOLOv8 annotations", default=r'datasets\yolo_annotations', nargs='?')
 
     args = parser.parse_args()
+    
+    if not os.path.exists(args.voc_folder):
+        print(f"Directory {args.voc_folder} does not exist. Exiting...")
+        exit(1)
+    
     convert_voc_to_yolo(args.voc_folder, args.yolo_folder)
