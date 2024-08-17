@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['boots', 'gloves', 'hard-hat', 'mask', 'ppe-suit', 'vest']
+
+roboflow:
+  workspace: name-y67ms
+  project: ppe_detection-5eafh
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/name-y67ms/ppe_detection-5eafh/dataset/1

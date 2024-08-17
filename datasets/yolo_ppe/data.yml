@@ -1,0 +1,5 @@
+names: ['person', 'hard-hat', 'gloves', 'mask', 'glasses', 'boots', 'vest', 'ppe-suit', 'ear-protector', 'safety-harness']
+nc: 10
+test: test\images
+train: train\images
+val: val\images
